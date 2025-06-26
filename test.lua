@@ -3,7 +3,6 @@ local uilib = {}
 local uis = game:GetService("UserInputService")
 local tweenservice = game:GetService("TweenService")
 
--- Create main window
 function uilib:CreateWindow(config)
 	local screengui = Instance.new("ScreenGui", game:GetService("CoreGui"))
 	screengui.IgnoreGuiInset = true
@@ -243,18 +242,3 @@ function uilib:CreateWindow(config)
 
 	return uilib
 end
-
--- USAGE EXAMPLE
-local ui = uilib:CreateWindow({Title = "My Custom UI"})
-
-local tab1 = ui:CreateTab("Main")
-tab1:AddLabel("Welcome to the UI!")
-tab1:AddButton("Click Me", function()
-	print("Clicked!")
-end)
-tab1:AddToggle("Enable Feature", false, function(state)
-	print("Toggle State:", state)
-end)
-tab1:AddSlider("Volume", 0, 100, 50, function(val)
-	print("Volume:", val)
-end)
